@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AvailabilitiesController;
 use App\Http\Controllers\DoctorsController;
 use Illuminate\Support\Facades\Route;
 
@@ -14,4 +15,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/doctors', [DoctorsController::class, 'index'])->name('api.doctors.index');
+Route::get('/doctors', [DoctorsController::class, 'index'])
+    ->name('api.doctors.index');
+
+Route::get('/doctors/{doctor}/availabilities', [AvailabilitiesController::class, 'index'])
+    ->name('api.availabilities.index');
