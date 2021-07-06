@@ -18,9 +18,9 @@ class Doctor extends Model
 {
     use HasFactory;
 
-    const AGENDA_DATABASE = 'database';
-    const AGENDA_DOCTOLIB = 'doctolib';
-    const AGENDA_CLICRDV = 'clicrdv';
+    public const AGENDA_DATABASE = 'database';
+    public const AGENDA_DOCTOLIB = 'doctolib';
+    public const AGENDA_CLICRDV = 'clicrdv';
 
     /**
      * @return HasMany
