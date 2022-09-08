@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Database\Factories;
 
 use App\Models\Doctor;
@@ -7,10 +9,15 @@ use Illuminate\Database\Eloquent\Factories\Factory;
 
 class DoctorFactory extends Factory
 {
-
+    /**
+     * @var string
+     */
     protected $model = Doctor::class;
 
-    public function definition()
+    /**
+     * @return array
+     */
+    public function definition(): array
     {
         return [
             'name' => "Dr. " . $this->faker->firstName() . " " . $this->faker->lastName(),
@@ -18,7 +25,11 @@ class DoctorFactory extends Factory
         ];
     }
 
-    public function withAgenda($agenda)
+    /**
+     * @param $agenda
+     * @return DoctorFactory
+     */
+    public function withAgenda($agenda): DoctorFactory
     {
         return $this->state(function () use ($agenda) {
             return [
